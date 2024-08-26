@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+#lyrics-input {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#submit-lyrics {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.lyrics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    display: none;
+}
+
+.lyrics-chunk {
+    font-size: 2rem;
+    color: #333;
+    opacity: 0.2;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(100px);
+    margin-bottom: 30px;  
+}
+
+.lyrics-chunk.active {
+    opacity: 1;
+    transform: translateY(0);
+    font-weight: bold;
+}
+
+/* Smooth transition for shifting previous content upward */
+.lyrics-chunk.previous {
+    transform: translateY(-30px);
+    opacity: 0.3;
+}
+
+.lyrics-chunk.next {
+    transform: translateY(30px);
+    opacity: 0.3;
+}
+
